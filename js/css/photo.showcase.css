@@ -1,0 +1,88 @@
+html{
+    overflow-y: visible;
+    font-size: 10px;
+}
+body{
+    margin: 0;
+    font-size: 1.4rem;
+    font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+    line-height: 1.5;
+    background: #fff;
+    color: #000;
+    background-image: url("https://unsplash.it/1920/403?blur&amp;image=998");
+    background-size: cover;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.demo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.photo-showcase-container{
+    position: relative;
+    width: 900px;
+    height: 420px;
+    padding: 5px;
+    border: 1px solid #c0c0c0;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.3);
+    background: #fff;
+}
+.photo-showcase-container figure{
+    margin: 0;
+}
+.photo-showcase-controller{
+    position: absolute;
+    bottom: 0px;
+    z-index: 10;
+    width: 96%;
+    height: 120px;
+    margin-left: 50%;
+    overflow:hidden;
+    transform: translateX(-50%);
+}
+.photo-showcase-controller img{
+    vertical-align: middle;
+    width: 80px;
+    height: 80px;
+    opacity: 0.7;
+    border-radius: 43px;
+    border: 1px solid #808080;
+    padding: 2px;
+    background: #fff;
+    transition: all 0.3s ease-in;
+}
+.photo-showcase-controller ul{
+    display: flex;
+    min-height: 96px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 0;
+    margin: 0;
+    position: absolute;
+    bottom: -120px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.photo-showcase-controller li{
+    flex-shrink: 0; 
+}
+.photo-showcase-controller a {
+    display: block;
+}
+.photo-showcase-container:hover .photo-showcase-controller ul,
+.photo-showcase-container.active .photo-showcase-controller ul {
+    opacity: 1;    
+    bottom: 10px;
+}
+.photo-showcase-controller a:focus img,
+.photo-showcase-controller a:hover img {
+    opacity: 1;
+    width: 88px;
+    height: 88px;
+    border-radius: 47px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html lang="ko" class="ie lt-ie10 lt-ie9 lt-ie8 lt-ie7 ie6"><![endif]-->
+<!--[if IE 7]><html lang="ko" class="ie lt-ie10 lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko" class="ie lt-ie10 lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko" class="ie lt-ie10 ie9"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="ko" class="modern">
+<!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript 실습</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/data.js"></script>
+    <script src="../lib/fds.js"></script>
+   <!--  <script src="./js/07.DOM.js"></script>async/defer 속성을 사용할 수 있다(비표준) -->
+    <style>
+        .lt-ie10 body{ margin:0 }
+    </style>
+</head>
+<body>
+    <div id="target-parent">
+        <h1>
+            <abbr title="Document Object Model">DOM</abbr> Script
+        </h1>
+        sibling text
+        sibling text
+
+        <div>test1</div>
+        sibling text
+        <div>test2</div>
+    </div>
+    
+    <ul id="target-next">
+        <li><a href="#">item 01</a></li>
+        <li><a href="#">item 02</a></li>
+        <li><a href="#">item 03</a></li>
+        <li><a href="#">item 04</a></li>
+    </ul>
+
+    <!--<ul id="products">
+        <li class="product-item"><a href="#">phone</a></li>
+        <li class="product-item"><a href="#">bag</a></li>
+        <li class="product-item"><a href="#">hat</a></li>
+        <li class="product-item"><a href="#">car</a></li>
+        <li class="product-item"><a href="#">book</a></li>
+    </ul>-->
+    <!--<script>
+        (function(global, document){
+            'use strict';
+            var products = document.getElementById('products');
+            var products_items = products.getElementsByTagName('li');
+            var changeLinkColor = function(){
+                this.style.color = 'lightblue';
+            }
+            for(var i=products_items.length;--i > -1;){
+                var item = products_items[i].getElementsByTagName('a')[0];
+                console.log('item.nodeType : ',item.nodeType); //element : 1
+                item.onfocus = changeLinkColor;
+            }
+        })(window, window.document);
+    </script>-->
+    <script src="./js/07.DOM.js"></script>
+    <!-- Dom Script 관련 script 는 하단-->
+</body>
+</html>
