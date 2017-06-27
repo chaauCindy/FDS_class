@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dom Script</title>
+    <link rel="stylesheet" href="./css/dom.script.css">
+    <script src="https://cdn.rawgit.com/emmetio/textarea/master/emmet.min.js"></script>
+</head>
+<body>
+    <!--<div class="wrapper">
+        <button type="button" class="button is-change-position" onclick="changePosition(this);">위치 변경</button>
+        <p lang="en">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <ul class="target">
+            <li><a href="#">content-01</a></li>
+            <li><a href="#">content-02</a></li>
+        </ul>
+        <div class="tester">__</div>
+    </div>-->
+    <!--<div class="input-field">
+        <label for="replace-content" class="a11y-hidden">대체 콘텐츠</label>
+        <input type="text" id="replace-content" class="input is-replace" placeholder="대체 콘텐츠를 입력하세요.">
+        <button type="button" class="button is-replace-role">콘텐츠 대체</button>
+    </div>
+    <div class="mount"></div>-->
+    <div class="container">
+        <button type="button" class="button is-node-copy" onclick="cloneNodeGNB()">노드 복제</button>
+        <hr>
+        <nav id="gnb">
+            <ul role="presentation" class="depth-1">
+                <li class="item"><a href="#iot" class="link"><abbr title="Internet of things">IOT</abbr></a></li>
+                <li class="item"><a href="#it" class="link"><abbr title="Information Technology">IT</abbr></a></li>
+                <li class="item"><a href="#mobile-phone" class="link">Mobile Phone</a></li>
+                <li class="item"><a href="#wide-screen" class="link">Wide Screen</a></li>
+                <li class="item"><a href="#remote-control-system" class="link">Remote Control System</a></li>
+            </ul>
+        </nav>
+        <div class="copyzone">
+        </div>
+        <hr>
+        <button type="button" class="button is-change-html-code">HTML 교체</button>
+        <p>
+            <textarea id="user-html-code" class="html-wrapper" rows="10" cols="30" placeholder="추가하고자 하는 HTML 코드를 작성하세요"></textarea>
+        </p>
+        <div class="html-wrapper">
+            <dl>
+                <dt>일시</dt>
+                <dd>2017년 6월 27일</dd> 
+                <dt>요일</dt>
+                <dd>화</dd>
+            </dl>
+        </div>
+
+        <hr>
+        <div class="insert-adjacent-html demo">
+            <p class="target">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam voluptate odio laudantium pariatur, autem odit perspiciatis, mollitia dignissimos sed reiciendis ab, doloremque ipsa adipisci quod temporibus maxime deserunt sit neque.</p>
+        </div>
+    </div>
+
+    <script id="FDS" src="../lib/fds.js"></script>
+    <script src="./js/05.dom.script.js"></script>
+</body>
+</html>

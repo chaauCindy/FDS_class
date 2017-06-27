@@ -13,6 +13,7 @@ body{
     background-size: cover;
     background-size: 100%;
     background-repeat: no-repeat;
+    transition: all 0.5s ease-out;
 }
 .demo {
     display: flex;
@@ -52,6 +53,7 @@ body{
     padding: 2px;
     background: #fff;
     transition: all 0.3s ease-in;
+    filter: grayscale(100%);
 }
 .photo-showcase-controller ul{
     display: flex;
@@ -73,6 +75,7 @@ body{
 }
 .photo-showcase-controller a {
     display: block;
+    outline: none;
 }
 .photo-showcase-container:hover .photo-showcase-controller ul,
 .photo-showcase-container.active .photo-showcase-controller ul {
@@ -85,4 +88,5 @@ body{
     width: 88px;
     height: 88px;
     border-radius: 47px;
+    filter: grayscale(0);
 }
