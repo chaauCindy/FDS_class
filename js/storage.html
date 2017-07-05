@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DOM 스토리지 &amp; JavaScript</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css">
+  <style>
+    .container{
+        max-width: 1080px;
+    }
+    .memo {
+        padding: 10px;
+    }
+    .memo > * {
+        margin: 0 5px 5px 0;
+    }
+  </style>
+  <script defer src="./js/native_storage.js"></script>
+</head>
+<body>
+
+  <div class="app container is-fluid">
+    <div class="columns">
+        <div class="column is-3">
+            <div class="memo box">
+                <label class="sr-only" for="memo-title">메모 제목</label>
+                <input type="text" class="input" id="memo-title" placeholder="메모 제목">
+                <label class="sr-only" for="memo-content">메모 내용</label>
+                <textarea rows="10" id="memo-content" cols="30" class="textarea" placeholder="메모 내용"></textarea>
+                <div class="field is-group">
+                    <button type="button" class="button is-save is-primary is-outlined is-small">
+                        <span class="icon is-small"><i class="fa fa-check" aria-hidden="true"></i></span>
+                        <span>메모 저장</span>
+                    </button>
+                    <button type="button" class="button is-cancel is-outlined is-small">
+                        <span class="icon is-small"><i class="fa fa-remove" aria-hidden="true"></i></span>
+                        <span>입력 취소</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="column is-9">
+        <div class="columns is-multiline memo-item-container">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

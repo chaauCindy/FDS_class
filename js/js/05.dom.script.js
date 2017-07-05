@@ -176,6 +176,51 @@
     }
     $.setAttr(target, dataMap);
     console.log(target.dataset);
-})(window, window.FDS, window.emmet);
+})//(window, window.FDS, window.emmet)
 
+;(function(global, $){
+    'use strict';
+    
+    var list = $.selector('ul.list');
+    var list_item = $.selectorAll('li',list);
+
+    $.attr(list, {
+        'name':  'menu',
+        'title': 'gnb-menu'
+    });
+
+    $.each(list_item, function(li){
+        $.attr(li, 'style','color: tan');
+        console.log($.attr(li, 'style'));
+
+        li.onclick = function(){
+            $.removeAttr(this,'style');
+        }
+    });
+
+    var btn_set = $.selector('.button-set');
+    var getComputedStyle = global.getComputedStyle;
+
+    //이벤트 위임 (버블링, 캡쳐링)
+    // e.stopPropagation()
+    // window.event.cancelBubble = true
+    btn_set.onclick = function(e){
+        // console.log(this, e.target, e.currentTarget);
+        var event_target = e.target;
+        // can't get font-size
+        // var current_font_size = list.style.fontSize;
+        // var current_font_size = list.currentStyle.fontSize;
+        // var current_font_size = global.getComputedStyle(list).fontSize;
+
+        var current_font_size = $.css(list,'font-size');
+
+        if($.hasClass(event_target, 'zoom-in')){
+            console.log ('zoom-in');
+        }else if($.hasClass(event_target, 'zoom-out')){
+            console.log ('zoom-out');
+        }
+    }
+
+   
+})(window, window.FDS);
 //FDS <= prepend Child method

@@ -1,8 +1,9 @@
-###사용자 정의###
+﻿###사용자 정의###
 _/
 __/
 .idea/
 .vscode/
+node_modules/
 reference.md
 youyu.com-assets.psd
 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax  비동기 통신 실습</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css" />
+    <script src="../lib//FDS/core.js" id="FDS"></script>
+    <script src="../lib//FDS/ajax.js"></script>
+    <script defer src="./js/ajax-native.js"></script>
+  <script defer src="./js/ajax-using-lib.js"></script>
+    <style>
+        .button {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .menu-list li{
+            padding: 10px;
+        }
+        .menu pre {
+        margin-top: 20px;
+        padding: 1em;
+        overflow: auto;
+        font-size: 16px;
+        line-height: 1.5;
+        }
+        @media screen and (max-width: 50em) {
+        .container {
+            padding: 0.6rem 2rem;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="container is-fluid">
+        <div class="columns">
+            <div class="column is-12">
+                <button type="button" class="button is-primary btn-print-ajax">call Ajax Data</button>
+                <div class="box columns is-multiline data-zone has-text-centered">
+                    통신 대기 중...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/x-template" id="user-card-template">
+    <div class="box column is-half">
+    <article class="media">
+        <div class="media-left">
+        <figure class="image is-64x64">
+            <img src="http://bulma.io/images/placeholders/128x128.png" class="picture" alt="Image">
+        </figure>
+        </div>
+        <div class="media-content">
+        <div class="content">
+            <p>
+            <strong class="name">John Smith</strong> <small><i class="fa gender" aria-hidden="true"></i></small> <small class="email"></small>
+            </p>
+            <p>
+            <strong>Address.</strong><span class="address"></span><br>
+            <strong><abbr title="Date of birth">DOB</abbr></strong><span class="dob"></span><br>
+            <strong>Phone.</strong><span class="phone"></span><br>
+            </p>
+        </div>
+        </div>
+    </article>
+    </div>
+    </script>   
+    
+    <script type="text/x-template" id="user-table-template">
+        <table class="table user-table">
+            <caption class="sr-only">임의의 사용자 정보 표</caption>
+            <thead class="thead">
+            <tr class="tr">
+                <th class="th" scope="col">순번</th>
+                <th class="th" scope="col">이름</th>
+                <th class="th" scope="col">성별</th>
+                <th class="th" scope="col">이메일</th>
+                <th class="th" scope="col">비고</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </script>
+</body>
+</html>
