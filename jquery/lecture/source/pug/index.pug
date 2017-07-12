@@ -1,0 +1,108 @@
+-
+    var accordion_data = {
+        'general': [
+        {'content': 'dashboard', 'href': '#dashboard'},
+        {'content': 'customers', 'href': '#customers'}
+        ],
+        'administration': [
+        {'content': 'team settings', 'href': '#team-settings'},
+        {'content': 'manage your team', 'href': '#manage-your-team'},
+        {'content': 'authentication', 'href': '#authentication'}
+        ],
+        'invitations': [
+        {'content': 'cloud storage environment settings', 'href': '#cloud-storage-environment-settings'},
+        ]
+    }
+mixin accordion(data)
+    article.ui-accordion.menu.box
+        each links, label in data
+            h4.menu-label
+                a.box(href)= label
+            ul.menu-list
+                each link in links
+                    li
+                        a(href=link.href)= link.content                    
+<!DOCTYPE html>
+html(lang="ko-KR")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title jQuery 학습
+        link(rel="stylesheet", href="/node_modules/bulma/css/bulma.css")
+        link(rel="stylesheet", href="./css/main.css")
+        script(src="/node_modules/jquery/dist/jquery.min.js")
+        script.
+            // window.$ = undefined
+            //- jQuery.noConflict()(($) => {   //    $(document).ready(()=>{
+            //-     //- console.log($ === window.jQuery);
+            //-     $('body').children().addClass('body-children');
+            //-     console.log('DOM is Ready!!!');
+            //- });
+    body
+        .app.container.wrapper
+            .columns
+                .main.column.is-6.is-offset-3
+                    h1.title.is-1  Hi, jQuery :)
+                    p.subtitle.is-3 write less do more.
+                    +accordion(accordion_data)
+                    nav.menu.box
+                        ul.main-menu.menu-list
+                            li
+                                a Category 1
+                                ul.sub-menu.sub-1
+                                    li
+                                        a category1 sub menu 1
+                                    li
+                                        a category1 sub menu 2
+                                    li
+                                        a category1 sub menu 3
+                                    li
+                                        a category1 sub menu 4
+                            li
+                                a Category 2
+                                ul.sub-menu.sub-2
+                                    li
+                                        a category2 sub menu 1
+                                    li
+                                        a category2 sub menu 2
+                                    li
+                                        a category2 sub menu 3
+                                    li
+                                        a category2 sub menu 4
+                            li
+                                a Category 3
+                                ul.sub-menu.sub-3
+                                    li
+                                        a category3 sub menu 1
+                                    li
+                                        a category3 sub menu 2
+                                    li
+                                        a category3 sub menu 3
+                                    li
+                                        a category3 sub menu 4
+                            li
+                                a Category 4
+                                ul.sub-menu.sub-4
+                                    li
+                                        a category4 sub menu 1
+                                    li
+                                        a category4 sub menu 2
+                                    li
+                                        a category4 sub menu 3
+                                    li
+                                        a category4 sub menu 4
+
+                    .column.is-3
+                        button.button.is-primary.toggle-box(type="button")
+                            | toggle 
+                            code .box
+                    p.box Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum dolorem earum sint ut ad, et culpa doloribus alias perferendis, consequatur, dolores rerum fuga accusamus quibusdam accusantium laboriosam facilis quis sed ea unde pariatur ullam dolorum inventore reiciendis. Neque, sequi, magnam.
+                    p.box Optio eum animi, voluptatem ipsum fugiat commodi perspiciatis placeat esse saepe facere consectetur sed eius, exercitationem quos repellat ipsa culpa blanditiis. Enim aut doloribus nesciunt, ut rerum adipisci debitis sequi minima atque. Repudiandae ea eaque praesentium, voluptate ut amet beatae.
+                    p.box Quasi eum voluptates blanditiis reprehenderit aliquid molestias facere laborum, nemo ipsam odio totam reiciendis natus ducimus, facilis perspiciatis illum. Est deleniti iusto saepe blanditiis sunt pariatur magnam ut ipsum voluptatem consectetur corporis inventore repellendus, officia voluptate aut dolor doloremque vel.
+                    p.box Eos optio asperiores illo, neque expedita, nihil libero aut officiis nulla possimus tempora pariatur consequatur quo corrupti delectus unde enim praesentium reprehenderit quam qui impedit vero facere sed. Repellat perferendis magnam repudiandae incidunt obcaecati assumenda tempora accusantium nisi sequi ducimus!
+                    p.box Eligendi quo labore, mollitia adipisci, doloremque temporibus provident sunt, doloribus molestias iure quis sapiente quod maxime eum suscipit nihil delectus at quasi. Asperiores numquam in esse obcaecati, necessitatibus rerum cumque, minima quibusdam blanditiis porro molestiae iste dolore dolorum debitis nam.
+                    p.box Atque cum assumenda repellendus tempore molestias maiores, totam, excepturi quo alias deleniti odio doloremque libero officia sapiente magnam saepe voluptatibus unde dolor ad, veniam, aspernatur facilis aliquam reprehenderit! Ipsa, aliquid! Culpa commodi eius, deserunt ratione ipsam incidunt dolor praesentium vitae!
+        //- script(src="/node_modules/jquery/dist/jquery.min.js")
+        //- script(src="//unpkg.com/jquery") //- use CDN
+        script(src="./js/main.js")

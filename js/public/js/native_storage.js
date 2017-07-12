@@ -8,39 +8,41 @@
  * 4. JSON.stringify()
  */
 
-(function(global){
+(function(global, $){
     'use strict';
-    
     var document     = global.document;
-    var JSON         = global.JSON;
     var forEach      = Array.prototype.forEach;
-    var myStorage    = global.localStorage;
-    var memo_data_id = 'memo-data';
     var loaded_data, memo, memo_buttons, memo_title, memo_content;
-    var app, memo_items;
-    var frag, root_frag;
+    var root, app, memo_items;
 
     function init(){
-        app                 = document.querySelector('.app');
-        memo                = document.querySelector('.memo');
-        memo_buttons        = memo.querySelectorAll('button');
-        memo_items          = app.querySelector('.memo-item-container');
-        load(memo_data_id);
-        render();
+        root         = '/memo/';
+        app          = document.querySelector('.app');
+        memo         = document.querySelector('.memo');
+        memo_buttons = memo.querySelectorAll('button');
+        memo_items   = app.querySelector('.memo-item-container');
+        load();
         bind();
     }
-    function load(id){
-        loaded_data = myStorage.getItem(id);
-        loaded_data = loaded_data ? JSON.parse(loaded_data) : [];
+    function load(){
+        $.get(root, function(data, status, xhr){
+            if (status === 'success') {
+                loaded_data = data;
+            } else {
+                loaded_data = [];
+            }
+            render();
+        });
     }
     function render(){
         var template = '';
         memo_items.innerHTML = '';
-        loaded_data.forEach(function(memo, index){
+        loaded_data.forEach(function(memo){
             template += '<article class="memo-item column is-3 message is-primary">'+
                 '<div class="message-header">'+
                     '<h5 class="memo-item-title">' + memo.title + '</h5>'+
-                    '<button type="button" class="delete" data-index="'+index+'" aria-label="메모 아이템 제거"></button>'+
+                    '<a class="is-inverted is-outlined modify" data-index="' + memo.id + '" aria-label="메모 아이템 수정"><span class="icon is-small"><i class="fa fa-pencil" aria-hidden="true"></i></span></a>'+
+                    '<button type="button" class="delete" data-index="' + memo.id + '" aria-label="메모 아이템 제거"></button>'+
                 '</div>'+
                 '<div class="message-body">'+
                     '<p class="memo-item-content">' + memo.content + '</p>'+
@@ -61,9 +63,15 @@
     function remove(e){
         var target = e.target;
         if (target.localName === 'button' && target.classList.contains('delete')){
-            loaded_data.splice(target.dataset.index, 1);
-            storage();
-            render();
+            $.ajax({ 
+                method: 'DELETE',
+                url: root+target.dataset.index,
+                dataType: 'json',
+                success: function(data, status){
+                    console.log('삭제 성공');
+                    load();
+                }
+            });
             e.stopPropagation(); //이벤트 전파 중지
         }
     }
@@ -89,17 +97,20 @@
             title : memo_title.value,
             content: memo_content.value
         };
-        loaded_data.push(memo_item);
-        storage();
-        cancel();
-        render();
+        storage(memo_item);
     }
-    function storage(){
-        myStorage.setItem(memo_data_id, JSON.stringify(loaded_data));//데이터의 문자화
+    function storage(new_item){
+        $.post(root, $.param(new_item), function(data, status){
+            if(status ==='success'){
+                console.log ('입력 성공');
+                load();
+            }
+        });
+        cancel();
     }
     function cancel(){        
         memo.querySelector('#memo-title').value ='';
         memo.querySelector('#memo-content').value ='';
     }
     init();
-})(window);
+})(window, window.jQuery);

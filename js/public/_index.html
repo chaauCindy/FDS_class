@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTTP 메서드: GET/POST/PUT/DELETE &amp; Ajax 비동기 통신</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css">
+  <script src="./js/jquery.ajax.min.js"></script>
+  <script defer src="./js/rest-api.js"></script>
+</head>
+<body>
+  <div class="container is-fluid">
+    <div class="columns">
+      <div class="column is-5 is-offset-4">
+        <div class="box">
+          <div class="field">
+            <label for="user-name" class="label">Name</label>
+            <p class="control">
+              <input id="user-name" class="input" type="text" placeholder="이름">
+            </p>
+          </div>
+          
+           <div class="field">
+            <label for="user-gender" class="label">Gender</label>
+            <p class="control">
+              <span class="select">
+                <select id="user-gender">
+                  <option value="male">male</option>
+                  <option value="female">female</option>
+                </select>
+              </span>
+            </p>
+          </div>
+          
+          <div class="field">
+            <label for="user-age" class="label">age</label>
+            <p class="control">
+              <span class="select">
+                <input id="user-age" class="input" type="text" placeholder="나이">
+              </span>
+            </p>
+          </div>
+          
+          <div class="field">
+            <label for="user-email" class="label">Email</label>
+            <p class="control has-icons-left has-icons-right">
+              <input id="user-email" class="input" type="email" placeholder="example@exam.com">
+            </p>
+          </div>
+          
+          <div class="field">
+            <label for="user-hobby" class="label">Hobby</label>
+            <p class="control">
+              <input id="user-hobby" class="input" type="text" placeholder="취미">
+            </p>
+          </div>
+          
+          <div class="field">
+            <label for="user-school-name" class="label">School name</label>
+            <div class="field has-addons">
+              <p class="control">
+                <input id="user-school-name" class="input" type="text" placeholder="학교명">
+              </p>
+              <label for="user-school-grade" class="label sr-only">grade</label>
+              <p class="control">
+                <span class="select">
+                  <select id="user-school-grade">
+                    <option value="1">1학년</option>
+                    <option value="2">2학년</option>
+                    <option value="3">3학년</option>
+                    <option value="4">4학년</option>
+                  </select>
+                </span>
+              </p>
+            </div>
+          </div>
+          
+          <div class="field">
+            <label for="user-major" class="label">Major</label>
+            <p class="control">
+              <input id="user-major" class="input" type="text" placeholder="전공">
+            </p>
+          </div>
+          
+          <div class="field">
+            <label for="user-minor" class="label">Minor</label>
+            <p class="control">
+              <input id="user-minor" class="input" type="text" placeholder="부전공">
+            </p>
+          </div>
+          
+          <div class="field">
+            <label for="user-family" class="label">Family</label>
+            <p class="control">
+              <input id="user-family" class="input" type="text" placeholder="가족구성원(콤마로 구분)">
+            </p>
+          </div>
+          
+          <div class="field is-grouped">
+            <p class="control">
+              <button class="button is-primary">Submit</button>
+            </p>
+            <p class="control">
+              <button class="button is-outlined">Cancel</button>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

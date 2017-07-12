@@ -1,0 +1,3 @@
+html{overflow-y:scroll;font-size:100%}body{margin:0;font:87.5%/1.5 "Spoqa Han Sans" Sans-serif;height:100vh}.app{margin-top:40px}.main{background:rgba(255,255,255,0.6);padding:1.4em}.main.is-fixed{position:fixed;z-index:1000;top:0;left:0;right:0;backdrop-filter:blur(2px)}.dim{position:fixed;z-index:100000;top:0;right:0;left:0;bottom:0;background:rgba(0,0,0,0.567)}.hide{display:none}ul{margin:0;padding:0}li{margin:0;padding:0}a.box.is-active{background:#00d1b2;color:#fff;cursor:default}div.notification.fixedTop{position:fixed;top:0;left:0;right:0;backdrop-filter:blur(2px)}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,74 @@
+mixin noti()
+    .notification(class!=attributes.class)
+        block
+        button.delete    
+mixin modal(data)
+    .modal-wrap
+        .modal(class!=attributes.class)
+            .modal-background
+            .modal-card
+                header.modal-card-head
+                    h4.modal-card-title #{data.title}
+                    button(type="button" aria-label="close modal").delete
+                section.modal-card-body
+                    block
+                footer.modal-card-foot
+                    button(type="button").button.is-success #{data.success}
+                    button(type="button").button.is-cancel #{data.cancel}
+        button(type="button").button.is-warning.show-modal #{data.show}
+<!DOCTYPE html>
+html(lang="ko")
+head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title components
+    link(rel="stylesheet", href="/node_modules/bulma/css/bulma.css")
+    link(rel="stylesheet", href="./css/main.css")
+    script(src="/node_modules/jquery/dist/jquery.min.js")
+
+body
+    .app.container
+        .columns
+            .column.is-6
+                +modal({
+                        title : "jQuery Modal",
+                        success : "Save",
+                        cancel : "Cancel",
+                        show : "Show Modal"
+                    })(class="fds-modal show-modal-target")
+                    p.box Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos repellendus, neque cum fugiat ullam alias id! Exercitationem ipsum iure dignissimos laudantium explicabo. Modi dignissimos corporis minima, totam amet eos unde vitae qui impedit, consectetur sint voluptas magnam quaerat sunt eaque.
+                    p.box Suscipit tempora dolorum modi at! Esse laudantium ratione nulla aspernatur doloremque dolores est expedita, beatae eos, sunt doloribus numquam sequi, sapiente aut sit explicabo corrupti quae. Quod deserunt deleniti libero consequatur perferendis.
+                    p.box Voluptate rerum error nulla optio amet quasi iste officia quos, incidunt perspiciatis numquam iusto illum. A quam porro veritatis officiis eligendi! Officia delectus aliquam magnam aspernatur temporibus accusantium assumenda neque eligendi repellat inventore saepe blanditiis explicabo repudiandae commodi perferendis pariatur laboriosam odio nobis libero, necessitatibus praesentium, eaque suscipit nesciunt. Accusantium quo, fugit.
+                    
+                +modal({
+                        title : "Second jQuery Modal",
+                        success : "Save",
+                        cancel : "Cancel",
+                        show : "Show Second Modal"
+                    })(class="fds-modal show-modal-target")
+                    p.box Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos repellendus, neque cum fugiat ullam alias id! Exercitationem ipsum iure dignissimos laudantium explicabo. Modi dignissimos corporis minima, totam amet eos unde vitae qui impedit, consectetur sint voluptas magnam quaerat sunt eaque.
+                    p.box Suscipit tempora dolorum modi at! Esse laudantium ratione nulla aspernatur doloremque dolores est expedita, beatae eos, sunt doloribus numquam sequi, sapiente aut sit explicabo corrupti quae. Quod deserunt deleniti libero consequatur perferendis.
+                    p.box Voluptate rerum error nulla optio amet quasi iste officia quos, incidunt perspiciatis numquam iusto illum. A quam porro veritatis officiis eligendi! Officia delectus aliquam magnam aspernatur temporibus accusantium assumenda neque eligendi repellat inventore saepe blanditiis explicabo repudiandae commodi perferendis pariatur laboriosam odio nobis libero, necessitatibus praesentium, eaque suscipit nesciunt. Accusantium quo, fugit.
+        .columns
+            .column.is-6
+                +noti()(class="site-noti is-primary")
+                    p
+                        | Lorem ipsum dolor sit amet,
+                        strong consectetur adipisicing elit.
+                        | Totam ipsum, repellendus. Assumenda blanditiis, modi a minus deserunt harum eum aspernatur ipsa adipisci maiores explicabo dolore praesentium magni! Porro, id, facere!
+                - var esc = "<em>escape?</em>"
+                +noti()(class="site-noti")
+                    blockquote
+                        | !{esc}
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        strong Eius quae ipsam accusamus omnis cumque, 
+                        | quasi animi molestiae autem, sunt nesciunt.
+                +noti()(class="site-noti is-danger")
+                    ol
+                        li notification list 
+                        li notification list  
+                        li notification list
+            .media-object-container
+    script(src="./js/components.js")
+    
