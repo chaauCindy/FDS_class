@@ -15,7 +15,10 @@ mixin modal(data)
                 footer.modal-card-foot
                     button(type="button").button.is-success #{data.success}
                     button(type="button").button.is-cancel #{data.cancel}
-        button(type="button").button.is-warning.show-modal #{data.show}
+        button(type="button").button.show-modal
+            span.icon.is-small
+                i.fa.fa-window-restore(aria-hidden="true")
+            span #{data.show}
 <!DOCTYPE html>
 html(lang="ko")
 head
@@ -23,6 +26,7 @@ head
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title components
+    link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
     link(rel="stylesheet", href="/node_modules/bulma/css/bulma.css")
     link(rel="stylesheet", href="./css/main.css")
     script(src="/node_modules/jquery/dist/jquery.min.js")
@@ -31,25 +35,27 @@ body
     .app.container
         .columns
             .column.is-6
-                +modal({
-                        title : "jQuery Modal",
-                        success : "Save",
-                        cancel : "Cancel",
-                        show : "Show Modal"
-                    })(class="fds-modal show-modal-target")
-                    p.box Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos repellendus, neque cum fugiat ullam alias id! Exercitationem ipsum iure dignissimos laudantium explicabo. Modi dignissimos corporis minima, totam amet eos unde vitae qui impedit, consectetur sint voluptas magnam quaerat sunt eaque.
-                    p.box Suscipit tempora dolorum modi at! Esse laudantium ratione nulla aspernatur doloremque dolores est expedita, beatae eos, sunt doloribus numquam sequi, sapiente aut sit explicabo corrupti quae. Quod deserunt deleniti libero consequatur perferendis.
-                    p.box Voluptate rerum error nulla optio amet quasi iste officia quos, incidunt perspiciatis numquam iusto illum. A quam porro veritatis officiis eligendi! Officia delectus aliquam magnam aspernatur temporibus accusantium assumenda neque eligendi repellat inventore saepe blanditiis explicabo repudiandae commodi perferendis pariatur laboriosam odio nobis libero, necessitatibus praesentium, eaque suscipit nesciunt. Accusantium quo, fugit.
-                    
-                +modal({
-                        title : "Second jQuery Modal",
-                        success : "Save",
-                        cancel : "Cancel",
-                        show : "Show Second Modal"
-                    })(class="fds-modal show-modal-target")
-                    p.box Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos repellendus, neque cum fugiat ullam alias id! Exercitationem ipsum iure dignissimos laudantium explicabo. Modi dignissimos corporis minima, totam amet eos unde vitae qui impedit, consectetur sint voluptas magnam quaerat sunt eaque.
-                    p.box Suscipit tempora dolorum modi at! Esse laudantium ratione nulla aspernatur doloremque dolores est expedita, beatae eos, sunt doloribus numquam sequi, sapiente aut sit explicabo corrupti quae. Quod deserunt deleniti libero consequatur perferendis.
-                    p.box Voluptate rerum error nulla optio amet quasi iste officia quos, incidunt perspiciatis numquam iusto illum. A quam porro veritatis officiis eligendi! Officia delectus aliquam magnam aspernatur temporibus accusantium assumenda neque eligendi repellat inventore saepe blanditiis explicabo repudiandae commodi perferendis pariatur laboriosam odio nobis libero, necessitatibus praesentium, eaque suscipit nesciunt. Accusantium quo, fugit.
+                .field.has-addons
+                    .control
+                        +modal({
+                                title : "jQuery Modal",
+                                success : "Save",
+                                cancel : "Cancel",
+                                show : "Show Modal"
+                            })(class="fds-modal show-modal-target")
+                            p.box Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos repellendus, neque cum fugiat ullam alias id! Exercitationem ipsum iure dignissimos laudantium explicabo. Modi dignissimos corporis minima, totam amet eos unde vitae qui impedit, consectetur sint voluptas magnam quaerat sunt eaque.
+                            p.box Suscipit tempora dolorum modi at! Esse laudantium ratione nulla aspernatur doloremque dolores est expedita, beatae eos, sunt doloribus numquam sequi, sapiente aut sit explicabo corrupti quae. Quod deserunt deleniti libero consequatur perferendis.
+                            p.box Voluptate rerum error nulla optio amet quasi iste officia quos, incidunt perspiciatis numquam iusto illum. A quam porro veritatis officiis eligendi! Officia delectus aliquam magnam aspernatur temporibus accusantium assumenda neque eligendi repellat inventore saepe blanditiis explicabo repudiandae commodi perferendis pariatur laboriosam odio nobis libero, necessitatibus praesentium, eaque suscipit nesciunt. Accusantium quo, fugit.
+                    .control
+                        +modal({
+                                title : "Second jQuery Modal",
+                                success : "Save",
+                                cancel : "Cancel",
+                                show : "Show Second Modal"
+                            })(class="fds-modal show-modal-target")
+                            p.box Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos repellendus, neque cum fugiat ullam alias id! Exercitationem ipsum iure dignissimos laudantium explicabo. Modi dignissimos corporis minima, totam amet eos unde vitae qui impedit, consectetur sint voluptas magnam quaerat sunt eaque.
+                            p.box Suscipit tempora dolorum modi at! Esse laudantium ratione nulla aspernatur doloremque dolores est expedita, beatae eos, sunt doloribus numquam sequi, sapiente aut sit explicabo corrupti quae. Quod deserunt deleniti libero consequatur perferendis.
+                            p.box Voluptate rerum error nulla optio amet quasi iste officia quos, incidunt perspiciatis numquam iusto illum. A quam porro veritatis officiis eligendi! Officia delectus aliquam magnam aspernatur temporibus accusantium assumenda neque eligendi repellat inventore saepe blanditiis explicabo repudiandae commodi perferendis pariatur laboriosam odio nobis libero, necessitatibus praesentium, eaque suscipit nesciunt. Accusantium quo, fugit.
         .columns
             .column.is-6
                 +noti()(class="site-noti is-primary")

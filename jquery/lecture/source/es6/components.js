@@ -71,12 +71,12 @@
     }
     global.Modal = Modal;
 
-})//(window, window.jQuery);
+})(window, window.jQuery);
 ;(function(global,$,Modal){
     'use strict';
     let modal = new Modal('.modal-wrap');
     
-})//(window, window.jQuery, window.Modal);
+})(window, window.jQuery, window.Modal);
 ;(function(global, $){
     'use strict';
     function Modal(el){

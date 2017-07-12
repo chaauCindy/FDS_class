@@ -109,11 +109,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }();
 
     global.Modal = Modal;
-});(function (global, $, Modal) {
+})(window, window.jQuery);
+;(function (global, $, Modal) {
     'use strict';
 
     var modal = new Modal('.modal-wrap');
-});(function (global, $) {
+})(window, window.jQuery, window.Modal);
+;(function (global, $) {
     'use strict';
 
     function Modal(el) {
