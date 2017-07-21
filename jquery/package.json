@@ -7,7 +7,8 @@
     "serve": "node_modules/.bin/live-server --port=3001 --cors",
     "pug": "node_modules/.bin/pug lecture/source/pug -w --out lecture/dist",
     "sass": "node_modules/.bin/node-sass -wr --output-style compressed -o lecture/dist/css --source-map true --source-map-contents lecture/source/sass",
-    "babel": "node_modules/.bin/babel -w lecture/source/es6 -d lecture/dist/js"
+    "babel": "node_modules/.bin/babel -w lecture/source/es6 -d lecture/dist/js",
+    "sass2": "node_modules/.bin/node-sass -wr --output-style compressed -o carousel/source/css --source-map true --source-map-contents carousel/source/sass"
   },
   "dependencies": {
     "bulma": "^0.4.3",

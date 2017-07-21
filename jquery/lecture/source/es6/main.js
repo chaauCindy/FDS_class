@@ -149,6 +149,19 @@
     if(!$.cache){
         $.cache = el=>$.data(el,'$') || $.data(el,'$', $(el));
     }
+    if ( !$.shake ) {
+        $.shake = ($el, time=2000, shake=10, distance=5) => {
+        let duration = time/shake/4;
+        $el.css('position', 'relative');
+        $.when(
+            $el
+            .stop()
+            .animate({left: -distance}, duration)
+            .animate({left: distance}, duration)
+            .animate({left: 0}, duration)
+        ).done(()=>$el.removeAttr('style'));
+        }
+    }
 })(window.jQuery);
 ;(function(global, $){
     'use strict';
@@ -194,7 +207,11 @@
         e.preventDefault();
         let $this = $.cache(e.target);
         let $actived = $labels.filter('.is-active');
-        if($actived.is($this)){ return; }
+        if($actived.is($this)){ 
+            // 흔들기
+            $.shake($this.parent());
+            return; 
+        }
         $actived.length && toggleList($actived);
         toggleList($this);
     }

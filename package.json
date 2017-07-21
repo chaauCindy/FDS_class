@@ -1,6 +1,8 @@
 {
   "devDependencies": {
-    "live-server": "^1.2.0"
+    "budo": "^10.0.3",
+    "live-server": "^1.2.0",
+    "virtual-dom": "^2.1.1"
   },
   "name": "chaau",
   "description": "",

@@ -1,0 +1,9 @@
+{
+  "scripts":{
+    "budo": "node_modules/.bin/budo index.js --open --live"  
+  },
+  "devDependencies": {
+    "budo": "^10.0.3",
+    "virtual-dom": "^2.1.1"
+  }
+}
